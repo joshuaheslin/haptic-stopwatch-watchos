@@ -18,7 +18,7 @@ class HapticsEngine: NSObject, ObservableObject {
     
     var intervalValue: Int = 1
     @Published var historyString: String = ""
-    @Published var timerValue: Int = 0
+    @Published var timerValue: Int = 1
 
     private func startSessionIfNeeded() {
         guard !isPlaying, session.state != .running else { return }
@@ -48,22 +48,23 @@ class HapticsEngine: NSObject, ObservableObject {
                 self?.timerValue += 1
             }
             
-            print("\(self?.timerValue) / \(self?.intervalValue)")
+            print("\(String(describing: self?.timerValue)) / \(String(describing: self?.intervalValue))")
             
             if let timerSeconds = self?.timerValue {
                 if let intervalSeconds = self?.intervalValue {
                     if ((timerSeconds % intervalSeconds) == 0) {
-                        print("buzz")
-                        WKInterfaceDevice.current().play(.success)
-                        self?.historyString += "*"
-        //                self.historyString += "*"
+                        if timerSeconds != 0 {
+                            print("buzz")
+                            WKInterfaceDevice.current().play(.success)
+                            self?.historyString += "*"
+                        }
                     }
                 }
             }
         })
     }
 
-    func startPlayinTicks(intervalVal: Int) {
+    func startPlayingTicks(intervalVal: Int) {
         timer?.invalidate()
         timer = nil
         timerValue = 0

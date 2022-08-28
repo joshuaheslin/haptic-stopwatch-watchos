@@ -33,71 +33,31 @@ struct ContentView: View {
 struct SecondView: View{
     @Binding var secondScreenShown: Bool
     @Binding var intervalVal: Int
-    @State var timerTest : Timer?
-    @State var historyString : String = ""
     @StateObject var hapticsEngine = HapticsEngine()
-    @State var timerVal: Int = 0
-    
-    var hours: Int {
-        self.timerVal / 3600
-    }
-
-//    var minutes: Int {
-//        (self.timerVal % 3600) / 60
-//    }
-//
-//    var seconds: Int {
-//        self.timerVal % 60
-//    }
     
     var body: some View {
         VStack {
-            if timerVal >= 0 {
-                Text("Time lapsed")
-                    .font(.system(size: 14))
-                HStack(spacing: 2) {
-                    StopwatchUnitView(timeUnit: self.hapticsEngine.minutes)
-                    Text(":")
-                    StopwatchUnitView(timeUnit: self.hapticsEngine.seconds)
-                }
-                    .font(.system(size: 40))
-                    .onAppear(){
-                        self.hapticsEngine.startPlayinTicks(intervalVal: self.intervalVal)
-
-//                        timerTest = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { _ in
-//                            self.timerVal += 1
-//
-//                            print("\(self.timerVal) / \(self.intervalVal)")
-//                            if ((self.timerVal % self.intervalVal) == 0) {
-//                                print("buzz")
-//                                WKInterfaceDevice.current().play(.success)
-//                                self.historyString += "*"
-//                            }
-//                        }
-                }
-                Text("\(intervalVal) seconds")
-                    .font(.system(size: 14))
-//                Text("\(self.hapticsEngine.timerValue) seconds")
-//                    .font(.system(size: 14))
-                Text(self.hapticsEngine.historyString)
-                Button(action: {
-                    self.secondScreenShown = false
-                    self.timerTest?.invalidate()
-                    self.timerTest = nil
-                    self.timerVal = 0
-                    self.historyString = ""
-                    self.hapticsEngine.stopPlayingTicks()
-                }) {
-                    Text("Cancel")
-                        .foregroundColor(.red)
-                }
-            } else {
-                Button(action: {
-                    self.secondScreenShown = false
-                }) {
-                    Text("Done")
-                        .foregroundColor(.green)
-                }
+            Text("Time lapsed")
+                .font(.system(size: 14))
+            HStack(spacing: 2) {
+                StopwatchUnitView(timeUnit: self.hapticsEngine.minutes)
+                Text(":")
+                StopwatchUnitView(timeUnit: self.hapticsEngine.seconds)
+            }
+                .font(.system(size: 40))
+                .onAppear(){
+                    self.hapticsEngine.startPlayingTicks(intervalVal: self.intervalVal)
+            }
+            Text("\(intervalVal) seconds")
+                .font(.system(size: 14))
+            Text(self.hapticsEngine.historyString)
+                .font(.system(size: 20))
+            Button(action: {
+                self.secondScreenShown = false
+                self.hapticsEngine.stopPlayingTicks()
+            }) {
+                Text("Cancel")
+                    .foregroundColor(.red)
             }
             
         }
