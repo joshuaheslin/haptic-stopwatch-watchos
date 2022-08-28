@@ -11,7 +11,6 @@ import SwiftUI
 struct ContentView: View {
     @State var secondScreenShown = false
     @State var intervalVal = 5
-    @State var timerVal = 0
     
     var body: some View {
         VStack{
@@ -26,7 +25,7 @@ struct ContentView: View {
                 Text("60").tag(60)
                 Text("120").tag(120)
             }
-            NavigationLink(destination: SecondView(secondScreenShown: $secondScreenShown, intervalVal: $intervalVal, timerVal: $timerVal), isActive: $secondScreenShown, label: {Text("Go")})
+            NavigationLink(destination: SecondView(secondScreenShown: $secondScreenShown, intervalVal: $intervalVal), isActive: $secondScreenShown, label: {Text("Go")})
         }
     }
 }
@@ -34,58 +33,60 @@ struct ContentView: View {
 struct SecondView: View{
     @Binding var secondScreenShown: Bool
     @Binding var intervalVal: Int
-    @Binding var timerVal: Int
     @State var timerTest : Timer?
     @State var historyString : String = ""
+    @StateObject var hapticsEngine = HapticsEngine()
+    @State var timerVal: Int = 0
     
     var hours: Int {
         self.timerVal / 3600
     }
 
-    var minutes: Int {
-        (self.timerVal % 3600) / 60
-    }
-
-    var seconds: Int {
-        self.timerVal % 60
-    }
+//    var minutes: Int {
+//        (self.timerVal % 3600) / 60
+//    }
+//
+//    var seconds: Int {
+//        self.timerVal % 60
+//    }
     
     var body: some View {
-        VStack{
+        VStack {
             if timerVal >= 0 {
                 Text("Time lapsed")
                     .font(.system(size: 14))
                 HStack(spacing: 2) {
-                    StopwatchUnitView(timeUnit: minutes)
+                    StopwatchUnitView(timeUnit: self.hapticsEngine.minutes)
                     Text(":")
-                    StopwatchUnitView(timeUnit: seconds)
+                    StopwatchUnitView(timeUnit: self.hapticsEngine.seconds)
                 }
                     .font(.system(size: 40))
                     .onAppear(){
-                        WKInterfaceDevice.current().play(.start)
-                        timerTest = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { _ in
-                            self.timerVal += 1
-                            
-                            print(self.timerVal)
-                            print(self.intervalVal)
-                            print(self.timerVal % self.intervalVal)
-                            if ((self.timerVal % self.intervalVal) == 0) {
-                                print("buzz")
-                                WKInterfaceDevice.current().play(.success)
-                                self.historyString += "*"
-                            }
-                        }
+                        self.hapticsEngine.startPlayinTicks(intervalVal: self.intervalVal)
+
+//                        timerTest = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { _ in
+//                            self.timerVal += 1
+//
+//                            print("\(self.timerVal) / \(self.intervalVal)")
+//                            if ((self.timerVal % self.intervalVal) == 0) {
+//                                print("buzz")
+//                                WKInterfaceDevice.current().play(.success)
+//                                self.historyString += "*"
+//                            }
+//                        }
                 }
-                Text("Haptic interval \(intervalVal) seconds")
+                Text("\(intervalVal) seconds")
                     .font(.system(size: 14))
-                Text(historyString)
+//                Text("\(self.hapticsEngine.timerValue) seconds")
+//                    .font(.system(size: 14))
+                Text(self.hapticsEngine.historyString)
                 Button(action: {
                     self.secondScreenShown = false
                     self.timerTest?.invalidate()
                     self.timerTest = nil
                     self.timerVal = 0
                     self.historyString = ""
-                    WKInterfaceDevice.current().play(.stop)
+                    self.hapticsEngine.stopPlayingTicks()
                 }) {
                     Text("Cancel")
                         .foregroundColor(.red)
@@ -100,7 +101,6 @@ struct SecondView: View{
             }
             
         }
-        
     }
 }
 

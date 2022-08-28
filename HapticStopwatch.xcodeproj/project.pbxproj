@@ -15,6 +15,7 @@
 		0E9167EC28BBA5A300A8A501 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9167EB28BBA5A300A8A501 /* ComplicationController.swift */; };
 		0E9167EE28BBA5A400A8A501 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E9167ED28BBA5A400A8A501 /* Assets.xcassets */; };
 		0E9167F128BBA5A400A8A501 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E9167F028BBA5A400A8A501 /* Preview Assets.xcassets */; };
+		0E96A78928BBB34000245510 /* HapticsEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E96A78828BBB34000245510 /* HapticsEngine.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,7 @@
 		0E9167ED28BBA5A400A8A501 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0E9167F028BBA5A400A8A501 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0E9167F228BBA5A400A8A501 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0E96A78828BBB34000245510 /* HapticsEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsEngine.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				0E9167E728BBA5A300A8A501 /* ContentView.swift */,
+				0E96A78828BBB34000245510 /* HapticsEngine.swift */,
 				0E9167E928BBA5A300A8A501 /* HapticStopwatchApp.swift */,
 				0E9167EB28BBA5A300A8A501 /* ComplicationController.swift */,
 				0E9167ED28BBA5A400A8A501 /* Assets.xcassets */,
@@ -258,6 +261,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E96A78928BBB34000245510 /* HapticsEngine.swift in Sources */,
 				0E9167EA28BBA5A300A8A501 /* HapticStopwatchApp.swift in Sources */,
 				0E9167E828BBA5A300A8A501 /* ContentView.swift in Sources */,
 				0E9167EC28BBA5A300A8A501 /* ComplicationController.swift in Sources */,
