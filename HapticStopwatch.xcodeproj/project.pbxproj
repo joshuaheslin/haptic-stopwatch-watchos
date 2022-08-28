@@ -37,7 +37,7 @@
 /* Begin PBXCopyFilesBuildPhase section */
 		0E9167F828BBA5A400A8A501 /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
@@ -48,7 +48,7 @@
 		};
 		0E9167FC28BBA5A400A8A501 /* Embed Watch Content */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
 			dstSubfolderSpec = 16;
 			files = (
@@ -399,12 +399,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"HapticStopwatch WatchKit Extension/Preview Content\"";
-				DEVELOPMENT_TEAM = CZANZ79UXT;
+				DEVELOPMENT_TEAM = KGYNYB9CW4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "HapticStopwatch WatchKit Extension/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "HapticStopwatch WatchKit Extension";
-				INFOPLIST_KEY_CLKComplicationPrincipalClass = "$(PRODUCT_MODULE_NAME).ComplicationController";
+				INFOPLIST_KEY_CLKComplicationPrincipalClass = HapticStopwatch_WatchKit_Extension.ComplicationController;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_WKWatchOnly = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -413,7 +413,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.joshuaheslin.HapticStopwatch.watchkitapp.watchkitextension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jbmh.HapticStopwatch.watchkit.extension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -431,12 +431,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"HapticStopwatch WatchKit Extension/Preview Content\"";
-				DEVELOPMENT_TEAM = CZANZ79UXT;
+				DEVELOPMENT_TEAM = KGYNYB9CW4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "HapticStopwatch WatchKit Extension/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "HapticStopwatch WatchKit Extension";
-				INFOPLIST_KEY_CLKComplicationPrincipalClass = "$(PRODUCT_MODULE_NAME).ComplicationController";
+				INFOPLIST_KEY_CLKComplicationPrincipalClass = HapticStopwatch_WatchKit_Extension.ComplicationController;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_WKWatchOnly = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -445,7 +445,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.joshuaheslin.HapticStopwatch.watchkitapp.watchkitextension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jbmh.HapticStopwatch.watchkit.extension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -464,13 +464,13 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = CZANZ79UXT;
+				DEVELOPMENT_TEAM = KGYNYB9CW4;
 				GENERATE_INFOPLIST_FILE = YES;
 				IBSC_MODULE = HapticStopwatch_WatchKit_Extension;
 				INFOPLIST_KEY_CFBundleDisplayName = "HapticStopwatch WatchKit App";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.joshuaheslin.HapticStopwatch.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jbmh.HapticStopwatch.watchkit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -489,13 +489,13 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = CZANZ79UXT;
+				DEVELOPMENT_TEAM = KGYNYB9CW4;
 				GENERATE_INFOPLIST_FILE = YES;
 				IBSC_MODULE = HapticStopwatch_WatchKit_Extension;
 				INFOPLIST_KEY_CFBundleDisplayName = "HapticStopwatch WatchKit App";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.joshuaheslin.HapticStopwatch.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jbmh.HapticStopwatch.watchkit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -511,9 +511,9 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = CZANZ79UXT;
+				DEVELOPMENT_TEAM = KGYNYB9CW4;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.joshuaheslin.HapticStopwatch;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jbmh.HapticStopwatch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -524,9 +524,9 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = CZANZ79UXT;
+				DEVELOPMENT_TEAM = KGYNYB9CW4;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.joshuaheslin.HapticStopwatch;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jbmh.HapticStopwatch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
